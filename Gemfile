@@ -1,9 +1,5 @@
 source 'https://rubygems.org'
 
-# should be listed in the Gemfile before any other gems that use environment variables,
-# otherwise those gems will get initialized with the wrong values.
-gem 'dotenv-rails'
-
 # TZInfo provides daylight savings aware transformations between times in different time zones.
 gem 'tzinfo-data'
 
