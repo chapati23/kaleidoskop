@@ -3,8 +3,18 @@
     %head
         %title Kaleidoskop
         %meta{ charset: "utf-8" }
-        %meta{ :"http-equiv" => "X-UA-Compatible", content: "IE=edge,chrome=1" }
-        %meta{ name: "viewport", content: "width=device-width" }
+        %meta{ 'http-equiv' => "X-UA-Compatible", content: "IE=edge,chrome=1" }
+        %meta{ name: "viewport",                 content: "width=device-width" }
+        %meta{ name: 'description',              content: 'third eye collides with macrocosm. truth lies dormant. no more.' }
+        %meta{ name: 'keywords',                 content: 'kaleidoskop, kldskp' }
+        %meta{ name: 'robots',                   content: 'index, follow' }
+        %meta{ property: 'og:type',              content: 'nightclub' }
+        %meta{ property: 'og:url',               content: 'http://www.kldskp.de' }
+        -#%meta{ property: 'og:image',             content: 'http://goldstoff.herokuapp.com/assets/g-300x300.png' }
+        %meta{ property: 'og:description',       content: '' }
+        -#%link{ rel: 'bookmark',      href: '/favicon.ico' }
+        -#%link{ rel: 'shortcut icon', href: '/favicon.ico' }
+
         = stylesheet_link_tag 'application', media: 'all', :'data-turbolinks-track' => true
         = javascript_include_tag 'application', :'data-turbolinks-track' => true
         = csrf_meta_tags
@@ -15,7 +25,7 @@
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-            ga('create', 'UA-50356882-1', 'kldskp.de');
+            ga('create', 'UA-50356882-1', 'www.kldskp.de');
             ga('send', 'pageview');
 
     %body
