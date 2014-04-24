@@ -1,4 +1,5 @@
 $logo-size: 250
+$typo-size: 600
 
 body
     background-color: #111
@@ -21,6 +22,20 @@ body
 
     &:hover
         opacity: 1
+
+#typo
+    left: 50%
+    margin: -240px 0 0 -#{$typo-size/2}px
+    opacity: .3
+    position: fixed
+    top: 50%
+    transition: 500ms opacity ease-in-out
+    width: #{$typo-size}px
+    z-index: 1
+
+    &:hover
+        opacity: 1
+
 
 .kaleidoscope
     height: 100%
