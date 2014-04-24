@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+# should be listed in the Gemfile before any other gems that use environment variables,
+# otherwise those gems will get initialized with the wrong values.
+gem 'dotenv-rails'
+
+# TZInfo provides daylight savings aware transformations between times in different time zones.
 gem 'tzinfo-data'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -37,7 +42,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-gem 'dotenv-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
