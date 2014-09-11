@@ -19,6 +19,8 @@ $( document ).ready( function () {
     var auto_x = 0;
     var auto_y = 0;
     var auto_throttle;
+    var isMobile = window.matchMedia("only screen and (max-width: 568px)").matches
+
 
     // PARAMETER: *s* is the speed of the automatic timeout animation.
     var s = parameters.s || 3;
@@ -32,9 +34,7 @@ $( document ).ready( function () {
         }
     }
 
-    var $kaleidescope = $( '.kaleidoscope' )
-    .addClass( 'n' + n )
-    .append( tiles );
+    var $kaleidescope = $( '.kaleidoscope' ).addClass( 'n' + n ).append( tiles );
 
     var $image = $kaleidescope.find( '.image' );
 
@@ -198,16 +198,18 @@ $( document ).ready( function () {
         $image.css( 'background-position', [ x + "px", y + "px" ].join( ' ' ) );
     }
 
-    // Timer to check for inactivity
-    (function timer() {
-        setTimeout( function() {
-            timer();
-            if( auto && !auto_throttle ) {
-                animate();
-                auto_throttle = true;
-            } else {
-                auto = true;
-            }
-        }, 5000 );
-    })();
+    if (!isMobile) {
+        // Timer to check for inactivity
+        (function timer() {
+            setTimeout( function() {
+                timer();
+                if( auto && !auto_throttle ) {
+                    animate();
+                    auto_throttle = true;
+                } else {
+                    auto = true;
+                }
+            }, 5000 );
+        })();
+    }
 });

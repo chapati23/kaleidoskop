@@ -1,16 +1,34 @@
+$breakpoint-s: 667
+$breakpoint-m: 768
+
 $logo-size: 250
 $typo-size: 600
+
+$logo-size-xs: 180
+$typo-size-xs: 300
+
+$logo-size-s: 175
+$typo-size-s: 400
+
+$logo-size-m: 220
+$typo-size-m: 500
+
+html, body
+    height: 100%
+    overflow: hidden
+    width: 100%
 
 body
     background-color: #111
     font-family: sans-serif
     font-size: 10pt
     margin: 0
-    overflow: hidden
     padding: 0
 
+html.touch #logo, html.touch #typo
+    opacity: 1
+
 #logo
-    height: #{$logo-size}px
     left: 50%
     margin: -#{$logo-size/2}px 0 0 -#{$logo-size/2}px
     opacity: .3
@@ -19,6 +37,21 @@ body
     transition: 500ms opacity ease-in-out
     width: #{$logo-size}px
     z-index: 1
+
+    @media (max-width: #{$breakpoint-s}px) and (orientation: portrait)
+        background: yellow
+        margin: -#{$logo-size-xs/2}px 0 0 -#{$logo-size-xs/2}px
+        width: #{$logo-size-xs}px
+
+    @media (max-width: #{$breakpoint-s}px) and (orientation: landscape)
+        background: orange
+        margin: -53px 0 0 -#{$logo-size-s/2}px
+        width: #{$logo-size-s}px
+
+    @media (min-width: #{$breakpoint-s + 1}px) and (max-width: #{$breakpoint-m}px)
+        background: red
+        margin: -#{$logo-size-m/2}px 0 0 -#{$logo-size-m/2}px
+        width: #{$logo-size-m}px
 
     &:hover
         opacity: 1
@@ -33,12 +66,25 @@ body
     width: #{$typo-size}px
     z-index: 1
 
+    @media (max-width: #{$breakpoint-s}px) and (orientation: portrait)
+        margin: -150px 0 0 -#{$typo-size-xs/2}px
+        width: #{$typo-size-xs}px
+
+    @media (max-width: #{$breakpoint-s}px) and (orientation: landscape)
+        margin: -112px 0 0 -#{$typo-size-s/2}px
+        width: #{$typo-size-s}px
+
+    @media (min-width: #{$breakpoint-s + 1}px) and (max-width: #{$breakpoint-m}px)
+        margin: -200px 0 0 -#{$typo-size-m/2}px
+        width: #{$typo-size-m}px
+
     &:hover
         opacity: 1
 
 
 .kaleidoscope
     height: 100%
+    overflow: hidden
     width: 100%
 
     .tile

@@ -11,3 +11,7 @@
 // about supported directives.
 //
 //= require_tree .
+
+if ('ontouchstart' in document.documentElement) {
+    $('html').addClass('touch');
+}
