@@ -4,21 +4,15 @@
         %title Kaleidoskop
         %meta{ charset: "utf-8" }
         %meta{ 'http-equiv' => "X-UA-Compatible", content: "IE=edge,chrome=1" }
-        %meta{ name: "viewport",                 content: "width=device-width" }
-        %meta{ name: 'description',              content: 'third eye collides with macrocosm. truth lies dormant. no more.' }
-        %meta{ name: 'keywords',                 content: 'kaleidoskop, kldskp' }
-        %meta{ name: 'robots',                   content: 'index, follow' }
-        %meta{ property: 'og:type',              content: 'nightclub' }
-        %meta{ property: 'og:url',               content: 'http://www.kldskp.de' }
-        -#%meta{ property: 'og:image',             content: 'http://goldstoff.herokuapp.com/assets/g-300x300.png' }
-        %meta{ property: 'og:description',       content: '' }
-        -#%link{ rel: 'bookmark',      href: '/favicon.ico' }
-        -#%link{ rel: 'shortcut icon', href: '/favicon.ico' }
-
-        = stylesheet_link_tag 'application', media: 'all', :'data-turbolinks-track' => true
-        = javascript_include_tag 'application', :'data-turbolinks-track' => true
+        %meta{ name: "viewport",                  content: "width=device-width" }
+        %meta{ name: 'description',               content: 'third eye collides with macrocosm. truth lies dormant. no more.' }
+        %meta{ name: 'keywords',                  content: 'kaleidoskop, kldskp' }
+        %meta{ name: 'robots',                    content: 'index, follow' }
+        %meta{ property: 'og:type',               content: 'nightclub' }
+        %meta{ property: 'og:url',                content: 'http://www.kldskp.de' }
+        %meta{ property: 'og:description',        content: '' }
+        = stylesheet_link_tag 'application', media: 'all'
         = csrf_meta_tags
-
         :javascript
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -30,3 +24,5 @@
 
     %body
         = yield
+        = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"
+        = javascript_include_tag 'application'
